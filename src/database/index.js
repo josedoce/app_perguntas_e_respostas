@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 
-const conexao = new Sequelize(process.env.DATABASE_URL);
+const conexao = new Sequelize('guia_perguntas_projeto','root','gatomolhado',{
+    host: 'localhost',
+    dialect: 'mysql'
+});
 //conectando ao banco
 conexao
     .authenticate()

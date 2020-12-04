@@ -77,4 +77,9 @@ app.get('/*', (req, res)=>{
         titulo: 'error 404 | guiaperguntas'
     });
 });
-app.listen(process.env.PORT || 8080);
+app.listen(3000, (erro)=>{
+    if(erro){
+        return console.log('erro ao iniciar o serviço.');
+    }
+    console.log('Api rodando!');
+})
