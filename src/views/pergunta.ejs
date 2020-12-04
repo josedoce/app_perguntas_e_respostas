@@ -1,0 +1,48 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <br>
+            <div class="card">
+                <div class="card-header">
+                    <h4><%=item.titulo%></h4>
+                    
+                </div>
+                <div class="card-body">
+                    <p><%=item.descricao%></p>
+                </div>
+                <div class="card-footer">
+                    <br>
+                    <form method="POST" action="/salvaresposta">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Responder a pergunta</h3>
+                            </div>
+                            <div class="card-body">
+                                    <label>Escreva sua resposta</label>
+                                    <input type="hidden" name="id" value="<%=item.id%>">
+                                    <textarea name="resposta" placeholder="Escreva sua resposta aqui" class="form-control"></textarea>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-success">Responder</button> 
+                            </div>
+                        </div>
+                    </form>
+                                <h1>Respostas recentes</h1>
+                                    <%itemRespostas.forEach((itemResp)=>{%>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>Resposta a: <%=item.titulo%></h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <p><%=itemResp.corpo%></p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    <%})%>
+                </div>
+            </div>
+            
+    </div>
+</body>
+<%- include('partials/rodape.ejs') %>

@@ -1,0 +1,24 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <h2>Perguntas recentes</h2>
+
+        <%perguntas.forEach((item)=>{%>
+            <div class="card">
+                <div class="card-header">
+                    <a href="/pergunta/<%=item.id%>"><h4><%=item.titulo%></h4></a>
+                    
+                </div>
+                <div class="card-body">
+                    <p><%=item.descricao%></p>
+                </div>
+                <div class="card-footer">
+                    <a href="/pergunta/<%=item.id%>"><button class="btn btn-success">Responder</button></a>
+                </div>
+            </div>
+            <hr>
+        <%})%>
+    </div>
+</body>
+<%- include('partials/rodape.ejs') %>

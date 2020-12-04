@@ -1,0 +1,24 @@
+configurando o ejs ou qualquer engine que for usar
+
+set('view engine','nome_da_engine'); dfinindo a engine
+app.set('views', path.join(__dirname, '/views')); definindo a localização personalizada da pasta views
+
+setando arquivos estaticos
+app.use(express.static(path.join(__dirname, '../public')));
+
+setando uso de json pelo express atravez da biblioteca bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extend: false}));
+
+curiosidades sobre o ejs
+
+varivaveis:
+    toda variavel exibida no html deve estar dentro de <%= %>
+estrutura condicional:
+    uma estrutura condicional deve esta entre <% condicional %>
+    <%if(condicao){faça algo...}else{faça algo...}%>
+estrutura de repetição
+    uma estrutura condicional deve esta entre <% condicional %>
+    <%array.forEach((parametro)=>{valor a ser repetido.})%>
+
+usando sequelize e mysql
